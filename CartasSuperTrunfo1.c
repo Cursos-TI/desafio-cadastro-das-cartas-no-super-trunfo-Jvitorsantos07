@@ -2,32 +2,47 @@
 
 int main(){
 
-    printf("Cartas Super Trunfo \n\n");
-
-    float populacao, area, pib;
+    printf("****** Desafio Cartas Super Trunfo****** \n\n");
+    printf("******Cadastre sua carta******\n\n");
+    
+    //cadastro das variaveis//
+    double populacao, area, pib, pib_per_capita, densidade_populacional;
     int pontos_turisticos;
     char local[50];
 
-    printf("Digite o local:\n");
-    fgets(local, sizeof(local), stdin);
+    //captação de dados do usuario//
+    printf("   Digite o local:\n");
+    fgets(    local, sizeof(local), stdin);
     
-    printf("Digite o numero da populacao:\n");
-    scanf("%g", &populacao);
+    printf("   Digite o numero da populacao:\n");
+    scanf("    %lf", &populacao);
 
-    printf("Digite a area:\n");
-    scanf("%g", &area);
+    printf("   Digite a area:\n");
+    scanf("    %lf", &area);
 
-    printf("Digite o PIB:\n");
-    scanf("%g", &pib);
+    printf("   Digite o PIB:\n");
+    scanf("    %lf", &pib);
 
-    printf("Digite o numero de pontos turisticos: \n");
-    scanf("%d", &pontos_turisticos);
+    printf("   Digite o numero de pontos turisticos:\n");
+    scanf("    %d", &pontos_turisticos);
 
-    printf("Local: %s\n", local);
-    printf("Populacao: %g\n", populacao);
-    printf("Area: %g\n", area);
-    printf("Pib: %g\n", pib);
-    printf("Pontos Turisticos: %d\n", pontos_turisticos);
+    printf("\n");
+
+    //calculo do pib per capita e densidade populacional//
+    pib_per_capita = pib / populacao;
+    densidade_populacional = populacao / area;
+
+    //apresenta todos os dados da carta um por linha//
+    printf("   Local escolhido: %s\n\n", local);
+    printf("   Populacao: %.1lf\n\n", populacao);
+    printf("   Area: %.1lfkm\n\n", area);
+    printf("   Pib é de %.1lf\n\n", pib);
+    printf("   Pontos Turisticos: %d\n\n", pontos_turisticos);
+    printf("   %.1lf é o pib per capita da região\n\n", pib_per_capita);
+    printf("   %.1lf é a densidade populacional\n\n", densidade_populacional);
+
+    printf("******Fim do Cadastro******\n\n");
+
 
     return 0;
     
