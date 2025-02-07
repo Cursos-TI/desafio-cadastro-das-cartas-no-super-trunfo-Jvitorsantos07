@@ -6,8 +6,8 @@ int main(){
     printf("******Cadastre sua carta******\n\n");
     
     //cadastro das variaveis//
-    double populacao, area, pib, pib_per_capita, densidade_populacional;
-    int pontos_turisticos;
+    double area, pib, pib_per_capita, densidade_populacional;
+    int pontos_turisticos, populacao;
     char local[50];
 
     //captação de dados do usuario//
@@ -15,7 +15,7 @@ int main(){
     fgets(    local, sizeof(local), stdin);
     
     printf("   Digite o numero da populacao:\n");
-    scanf("    %lf", &populacao);
+    scanf("    %d", &populacao);
 
     printf("   Digite a area:\n");
     scanf("    %lf", &area);
@@ -34,7 +34,7 @@ int main(){
 
     //apresenta todos os dados da carta um por linha//
     printf("   Local escolhido: %s\n\n", local);
-    printf("   Populacao: %.1lf\n\n", populacao);
+    printf("   Populacao: %d\n\n", populacao);
     printf("   Area: %.1lfkm\n\n", area);
     printf("   Pib é de %.1lf\n\n", pib);
     printf("   Pontos Turisticos: %d\n\n", pontos_turisticos);
