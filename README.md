@@ -1,83 +1,99 @@
-# ⚠️ Importante!!!
-Criamos um novo link para o primeiro desafio porque o link original apresentou problemas. Quem já completou o desafio pode continuar usando o link original para enviar seu repositório. Se você ainda não começou o desafio, utilize o novo link.
+#include <stdio.h>
 
-# Desafio Super Trunfo - Países - Cadastro das Cartas
+int main(){
 
-Bem-vindo ao desafio "Super Trunfo - Países"! No jogo Super Trunfo, os jogadores comparam as propriedades das cartas para determinar a mais forte. O tema deste Super Trunfo é "Países," onde você comparará as propriedades das cidades.
+    double pib_per_capita1, pib_per_capita2, densidade_populacional1, densidade_populacional2;
+    char local1[70], local2[70];
+    char codigo1, codigo2;
+    char sigla1[10], sigla2[10];
+    int pontos_turisticos1, pontos_turisticos2, populacao1, populacao2;
+    int area1, area2;
+    int pib1, pib2;
 
-A empresa MateCheck contratou você para desenvolver a parte inicial do jogo, que consiste no cadastro das cartas.
+// usuário digita os dados da primeira carta//
 
-O desafio está dividido em três níveis: Novato, Aventureiro e Mestre, com cada nível adicionando mais complexidade ao anterior. Você deve escolher qual desafio quer realizar.
+printf("Digite o código:\n");
+scanf("%c", &codigo1);
 
-### 🚨 Atenção: 
-O nível Novato do desafio é focado apenas no cadastro das cartas, utilizando as funções scanf para ler os dados e printf para exibi-los.
+printf("Digite a identificação:\n");
+scanf(" %s", &sigla1);
 
-## 🎮 Nível Novato
+getchar();
+printf("Digite a cidade do jogador 1:\n");
+fgets(local1, sizeof(local1), stdin);
 
-No nível Novato, você iniciará criando o sistema básico do jogo Super Trunfo com o tema "Países". As cartas serão divididas por estados, cada um com quatro cidades. 
+printf("Digite a populacao:\n");
+scanf("%d", &populacao1);
 
-Cada país será dividido em oito estados, identificados pelas letras de A a H. Cada estado terá quatro cidades, numeradas de 1 a 4. A combinação da letra do estado e o número da cidade define o código da carta (por exemplo, A01, A02, B01, B02).
+printf("Digite o pib: \n");
+scanf("%d", &pib1);
+        
+printf("Digite a area 1:\n");
+scanf("%d", &area1);
 
-### 🚩 Objetivo:
-- Criar cartas representando cidades, contendo as seguintes propriedades:
-  - **População**
-  - **Área**
-  - **PIB**
-  - **Número de pontos turísticos**
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema permitirá ao usuário cadastrar cartas de cidades, inserindo manualmente os dados via terminal de comando.
-- Após o cadastro, o sistema exibirá os dados de cada cidade de forma clara e organizada.
+printf("Digite o numero de pontos turisticos:\n");
+scanf("%d", &pontos_turisticos1);
 
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere os dados de cada carta interativamente.
-- Após o cadastro, os dados são exibidos com todas as propriedades da cidade, uma por linha.
+densidade_populacional1 = pib1 / pontos_turisticos1;
+pib_per_capita1 = populacao1 / area1;
 
----
+printf("\n");
 
-## 🛡️ Nível Aventureiro
+//usuário digita os dados da segunda carta//
 
-No nível Aventureiro, você expandirá o sistema para incluir propriedades calculadas, permitindo uma análise mais detalhada das cartas.
+printf("***Digite os dados da segunda carta***\n\n");
 
-### 🆕 Diferença em relação ao Nível Novato:
-- **Novas Propriedades Calculadas:**
-  - **Densidade Populacional:** População dividida pela área da cidade.
-  - **PIB per Capita:** PIB total dividido pela população.
+printf("Digite o codigo: \n");
+scanf(" %c", &codigo2);
 
-### ⚙️ Funcionalidades do Sistema:
-- O sistema agora calculará automaticamente a Densidade Populacional e o PIB per Capita com base nos dados inseridos.
-- Essas novas propriedades serão adicionadas às informações exibidas para cada cidade.
+printf("Digite a identificação: \n");
+scanf(" %s", &sigla2);
 
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário continua inserindo os dados de cada carta interativamente.
-- O sistema exibirá os dados, incluindo as novas propriedades calculadas, de forma clara e organizada.
+getchar();
+printf("Digite o Nome da Cidade: \n");
+fgets(local2, sizeof(local2), stdin);
 
----
+printf("Digite a Populacao:\n");
+scanf("%d", &populacao2);
 
-## 🏆 Nível Mestre
+printf(" Digite o PIB: \n");
+scanf("%d", &pib2);
+        
+ printf("Digite a area:\n");
+scanf("%d", &area2);
 
-No nível Mestre, você implementará comparações entre as cartas, utilizando operadores relacionais e manipulando grandes números com precisão.
+printf("Digite o numero de pontos turisticos:\n");
+scanf("%d", &pontos_turisticos2);
 
-### 🆕 Diferença em relação ao Nível Aventureiro:
-- **Comparação de Cartas:**
-  - O sistema permitirá ao usuário comparar duas cartas com base nas propriedades inseridas e calculadas.
-  - Cada carta terá um "Super Poder", que é a soma de todas as propriedades.
-  
-### ⚙️ Funcionalidades do Sistema:
-- O sistema utilizará operadores relacionais para determinar a carta vencedora com base nas propriedades comparadas.
-- A comparação considerará:
-  - **Densidade Populacional:** Vence a carta com menor valor.
-  - **Outras Propriedades:** Vence a carta com maior valor.
-- O resultado das comparações será exibido claramente para cada propriedade.
+densidade_populacional2 = pib2 / pontos_turisticos2;
+pib_per_capita2 = populacao2 / area2;
 
-### 📥 Entrada e 📤 Saída de Dados:
-- O usuário insere as cartas a serem comparadas.
-- O sistema exibe os resultados das comparações, indicando a carta vencedora para cada propriedade.
 
----
 
-Ao concluir todos os níveis, você terá criado um sistema incial para o jogo Super Trunfo, com funcionalidades de cadastro, cálculo e comparação de propriedades. 
+//resultado de todos os dados preenchidos//
 
-Boa sorte e divirta-se programando!
+printf("Cidades escolhidas foram: %s e %s. \n\n", local1 , local2);
+printf("Todos os dados a seguir serão RESPECTIVOS as cidades citadas acima.\n\n");
+printf("População carta1: %ld ,carta2: %ld\n\n", populacao1, populacao2);
+printf("Os PIBs são de carta1 R$:%ld Reais, e carta2 R$:%ld Reais.\n\n", pib1, pib2);
+printf("Área carta1: %dkm², área carta2: %dkm².\n\n", area1, area2);
+printf("Pontos turisticos carta1: %d, carta2: %d.\n\n", pontos_turisticos1, pontos_turisticos2);
+printf("Densidade populacional é de: carta1 %.1lf, e carta2: %.1lf.\n\n", densidade_populacional1, densidade_populacional2);
 
-Equipe de Ensino - MateCheck
+if(densidade_populacional1 > densidade_populacional2){
+    printf("Carta1 - %s\n Densidade populacional é %.1lf\n",local1, densidade_populacional1);
+    printf("Carta2 - %s\n Densidade populacional é %.1lf\n",local2, densidade_populacional2);
+    printf("Carta1 %s Venceu!!!\n", local1);
+}else{
+    printf("Carta1 - %s\n Densidade populacional é %.1lf\n",local1, densidade_populacional1);
+    printf("Carta2 - %s\n Densidade populacional é %.1lf\n",local2, densidade_populacional2);
+    printf("Carta2 %s Venceu!!!\n", local2);
+    
+}
+printf("\n\n");
+
+
+
+    return 0;
+
+}
