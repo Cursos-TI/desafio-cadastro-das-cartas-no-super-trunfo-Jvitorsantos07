@@ -2,13 +2,13 @@
 
 int main(){
 
-    double pib_per_capita1, pib_per_capita2, densidade_populacional1, densidade_populacional2;
+    float pib_per_capita1, pib_per_capita2, densidade_populacional1, densidade_populacional2;
     char local1[70], local2[70];
     char codigo1, codigo2;
     char sigla1[10], sigla2[10];
     int pontos_turisticos1, pontos_turisticos2, populacao1, populacao2;
-    int area1, area2;
-    int pib1, pib2;
+    float area1, area2;
+    float pib1, pib2;
 
 // usuário digita os dados da primeira carta//
 
@@ -26,10 +26,10 @@ printf("Digite a populacao:\n");
 scanf("%d", &populacao1);
 
 printf("Digite o pib: \n");
-scanf("%d", &pib1);
+scanf("%f", &pib1);
         
 printf("Digite a area 1:\n");
-scanf("%d", &area1);
+scanf("%f", &area1);
 
 printf("Digite o numero de pontos turisticos:\n");
 scanf("%d", &pontos_turisticos1);
@@ -57,10 +57,10 @@ printf("Digite a Populacao:\n");
 scanf("%d", &populacao2);
 
 printf(" Digite o PIB: \n");
-scanf("%d", &pib2);
+scanf("%f", &pib2);
         
  printf("Digite a area:\n");
-scanf("%d", &area2);
+scanf("%f", &area2);
 
 printf("Digite o numero de pontos turisticos:\n");
 scanf("%d", &pontos_turisticos2);
@@ -72,13 +72,14 @@ pib_per_capita2 = populacao2 / area2;
 
 //resultado de todos os dados preenchidos//
 
-printf("Cidades escolhidas foram: %s e %s. \n\n", local1 , local2);
+printf("Cidades escolhidas foram: %s e %s. \n", local1 , local2);
 printf("Todos os dados a seguir serão RESPECTIVOS as cidades citadas acima.\n\n");
-printf("População carta1: %ld ,carta2: %ld\n\n", populacao1, populacao2);
-printf("Os PIBs são de carta1 R$:%ld Reais, e carta2 R$:%ld Reais.\n\n", pib1, pib2);
-printf("Área carta1: %dkm², área carta2: %dkm².\n\n", area1, area2);
-printf("Pontos turisticos carta1: %d, carta2: %d.\n\n", pontos_turisticos1, pontos_turisticos2);
-printf("Densidade populacional é de: carta1 %.1lf, e carta2: %.1lf.\n\n", densidade_populacional1, densidade_populacional2);
+printf("População carta1: %ld ,carta2: %ld\n", populacao1, populacao2);
+printf("Os PIBs são de carta1 R$:%.2fM Reais, e carta2 R$:%.2fM Reais.\n", pib1, pib2);
+printf("Área carta1: %.3fkm², área carta2: %.3fkm².\n", area1, area2);
+printf("Pontos turisticos carta1: %d, carta2: %d.\n", pontos_turisticos1, pontos_turisticos2);
+printf("Densidade populacional é de: carta1 %.3f, e carta2: %.3lf.\n", densidade_populacional1, densidade_populacional2);
+printf("O Pib-Per-Capita da carta1 é:R$ %.3f, e carta2 é:R$ %.3f.\n");
 
 if(densidade_populacional1 > densidade_populacional2){
     printf("Carta1 - %s Densidade populacional é %.1lf\n",local1, densidade_populacional1);
