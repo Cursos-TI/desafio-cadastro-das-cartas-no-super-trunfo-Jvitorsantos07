@@ -12,8 +12,10 @@ int main(){
     float pib1, pib2;
     float super_poder1, super_poder2;
 
-// usuário digita os dados da primeira carta//
+    printf("***Bem-vindo ao jogo Super Trunfo***\n");
+    printf("Vamos iniciar...\n\n");
 
+// usuário digita os dados da primeira carta//
 printf("Digite o código:\n");
 scanf("%c", &codigo1);
 
